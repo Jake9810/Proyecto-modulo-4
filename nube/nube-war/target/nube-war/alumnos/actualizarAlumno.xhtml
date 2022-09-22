@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Actualizar alumno</title>
+</h:head>
+
+<h:body>
+    <h1>Borrar Alumno de la base de datos</h1>
+    <p>
+        <h:outputText value="Borrar Alumno de la base de datos"/>
+    </p>
+    <br/>
+    <h:form id="actualizaAlumnos">
+        <p:growl id="actualizaMensajes" showDetail="true"/>
+        <h:outputLabel for="idAlumno" value="Id del alumno:"/>
+        <p:inputText id="idAlumno" value="#{alumnosController.idA}"/>
+
+        <p:commandButton icon="pi pi-search" value="Buscar" actionListener="#{alumnosController
+                .buscarAlumno(alumnosController.idA)}" update="actualizaMensajes"/>
+        <br/>
+        <p:outputPanel id="nombre" value="Nombre del alumno: ">
+            <p:autoUpdate/>
+            Nombre: #{alumnosController.nuevo.nombre}
+        </p:outputPanel>
+        <p:inplace for="nombre">
+            <f:facet name="output">
+                Nuevo nombre
+            </f:facet>
+            <f:facet name="input">
+                <p:inputText value="#{alumnosController.nuevo.nombre}"/>
+            </f:facet>
+        </p:inplace>
+        <br/>
+        <p:outputPanel id="tutor" value="Tutor">
+            <p:autoUpdate/>
+            Tutor: #{alumnosController.nuevo.tutor}
+        </p:outputPanel>
+        <p:inplace for="tutor">
+            <f:facet name="output">
+                Nuevo tutor
+            </f:facet>
+            <f:facet name="input">
+                <p:inputText value="#{alumnosController.nuevo.tutor}"/>
+            </f:facet>
+        </p:inplace>
+        <br/>
+        <p:outputPanel id="idK" value="ID centro: ">
+            <p:autoUpdate/>
+            Centro: #{alumnosController.nuevo.idK}
+        </p:outputPanel>
+        <p:inplace for="idK">
+            <f:facet name="output">
+                Nuevo centro
+            </f:facet>
+            <f:facet name="input">
+                <p:inputText value="#{alumnosController.nuevo.idK}"/>
+            </f:facet>
+        </p:inplace>
+        <br/>
+        <p:outputPanel id="Correo" value="Correo ">
+            <p:autoUpdate/>
+            Correo: #{alumnosController.nuevo.unom}
+        </p:outputPanel>
+        <p:inplace for="Correo">
+            <f:facet name="output">
+                Nuevo correo
+            </f:facet>
+            <f:facet name="input">
+                <p:inputText value="#{alumnosController.nuevo.unom}"/>
+            </f:facet>
+        </p:inplace>
+        <br/>
+        <p:outputPanel id="pass" value="Contraseña ">
+            <p:autoUpdate/>
+            Contraseña: #{alumnosController.nuevo.upass}
+        </p:outputPanel>
+        <p:inplace for="pass">
+            <f:facet name="output">
+                Nueva contraseña
+            </f:facet>
+            <f:facet name="input">
+                <p:inputText value="#{alumnosController.nuevo.upass}"/>
+            </f:facet>
+        </p:inplace>
+        <br/>
+        <h:outputLabel for="matAlmn" value="Materia:" />
+        <p:selectOneMenu id="matAlmn" value="#{alumnosController.idM}">
+            <f:selectItems value="#{alumnosController.catMaterias}" var="materia"
+                           itemLabel="#{materia.name}" itemValue="#{materia.id}"/>
+        </p:selectOneMenu>
+        <p:commandButton icon="pi pi-times" value="Actualizar" actionListener="#{alumnosController.actualizaAlumno()}"
+                         update="actualizaMensajes"/>
+    </h:form>
+
+    <p:linkButton outcome="/index"  icon="pi pi-arrow-circle-left" value="Regresar" style="margin-right:20px;">
+        <f:param name="index" value="index"/>
+    </p:linkButton>
+
+</h:body>
+</html>

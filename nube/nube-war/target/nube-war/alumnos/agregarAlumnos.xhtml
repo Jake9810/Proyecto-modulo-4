@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Alta de alumno</title>
+</h:head>
+
+<h:body>
+    <h1>Agregar Alumno a la base de datos</h1>
+    <p>
+        <h:outputText value="Agregar Alumno a la base de datos"/>
+    </p>
+    <br/>
+    <h:form id="altaAlumnos">
+        <p:growl id="altaMensajes" showDetail="true"/>
+        <h:outputLabel for="nomAlumno" value="Nombre del alumno:"/>
+        <p:inputText id="nomAlumno" value="#{alumnosController.nuevo.nombre}"/>
+        <br/>
+        <h:outputLabel for="nomTutor" value="Nombre del tutor:"/>
+        <p:inputText id="nomTutor" value="#{alumnosController.nuevo.tutor}"/>
+        <br/>
+        <h:outputLabel for="idCentro" value="Centro de inscripción:"/>
+        <p:inputText id="idCentro" value="#{alumnosController.nuevo.idK}"/>
+        <br/>
+        <h:outputLabel for="nomUsrAlmn" value="Correo:"/>
+        <p:inputText id="nomUsrAlmn" value="#{alumnosController.nuevo.unom}"/>
+        <br/>
+        <h:outputLabel for="passUsrAlm" value="Contraseña:"/>
+        <p:inputText id="passUsrAlm" value="#{alumnosController.nuevo.upass}"/>
+        <br/>
+        <h:outputLabel for="matAlmn" value="Materia:"/>
+        <p:selectOneMenu id="matAlmn" value="#{alumnosController.idM}">
+            <f:selectItems value="#{alumnosController.catMaterias}" var="materia"
+                           itemLabel="#{materia.name}" itemValue="#{materia.id}"/>
+        </p:selectOneMenu>
+        <br/>
+        <!--<h:outputLabel for="pagoInc" value="pago inicial:" />
+        <p:inputText id="pagoInc" value="#{alumnosController.nuevo.pagos}"/>
+        <br/>-->
+        <p:commandButton icon="pi pi-save" value="Guardar"
+                         actionListener="#{alumnosController.guardarAlumno()}"
+                         update="altaMensajes"/>
+
+    </h:form>
+    <p:linkButton outcome="/index" icon="pi pi-arrow-circle-left" value="Regresar" style="margin-right:20px;">
+        <f:param name="index" value="index"/>
+    </p:linkButton>
+</h:body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence>
+    <persistence-unit name="nubeDS" transaction-type="JTA">
+        <jta-data-source>java:/nubeDS</jta-data-source>
+        <!-- <class>jira.nube.appear.ejb.modelo.KumonEnt</class> -->
+        <class>jira.nube.appear.ejb.modelo.AlumnoEnt</class>
+        <class>jira.nube.appear.ejb.modelo.UsuariosEnt</class>
+        <class>jira.nube.appear.ejb.modelo.MateriasEnt</class>
+        <class>jira.nube.appear.ejb.modelo.PagosEnt</class>
+        <class>jira.nube.appear.ejb.modelo.CalificacionesEnt</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>

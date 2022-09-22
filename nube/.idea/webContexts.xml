@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/nube-war/src/main/webapp/alumnos/actualizarAlumno.xhtml" value="file://$PROJECT_DIR$/nube-war/src/main/webapp/alumnos" />
+        <entry key="file://$PROJECT_DIR$/nube-war/src/main/webapp/alumnos/agregarAlumnos.xhtml" value="file://$PROJECT_DIR$/nube-war/src/main/webapp/alumnos" />
+        <entry key="file://$PROJECT_DIR$/nube-war/src/main/webapp/index.xhtml" value="file://$PROJECT_DIR$/nube-war/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/nube-war/src/main/webapp/prime/nubePrime.xhtml" value="file://$PROJECT_DIR$/nube-war/src/main/webapp/prime" />
+      </map>
+    </option>
+  </component>
+</project>

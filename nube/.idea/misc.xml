@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="ejb" url="file://$PROJECT_DIR$/nube-ejb" />
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/nube-ear" />
+    <file type="web" url="file://$PROJECT_DIR$/nube-war" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/nube-ejb/pom.xml" />
+        <option value="$PROJECT_DIR$/nube-war/pom.xml" />
+        <option value="$PROJECT_DIR$/nube-ear/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

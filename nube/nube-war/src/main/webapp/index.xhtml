@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:faces="jakarta.faces"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:pt="jakarta.faces.passthrough"
+      xmlns:cc="jakarta.faces.composite"
+      xmlns:my="jakarta.faces.component"
+      xmlns:c="jakarta.tags.core"
+      xmlns:fn="jakarta.tags.functions">
+
+<h:head>
+    <title>Administrador de alumnos</title>
+</h:head>
+
+<h:body>
+    <h2>Administrar Alumnos</h2>
+    <div class="Alumnos">
+        <h3>Lista de alumnos</h3>
+        <h:form id="fromList">
+            <p:dataTable var="alumno" value="#{alumnosController.catAlumnos}">
+                <p:column headerText="ID">
+                    <h:outputText value="#{alumno.id}"/>
+                </p:column>
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{alumno.nombre}"/>
+                </p:column>
+                <p:column headerText="Tutor">
+                    <h:outputText value="#{alumno.tutor}"/>
+                </p:column>
+                <p:column headerText="Correo">
+                    <h:outputText value="#{alumno.unom}"/>
+                </p:column>
+                <p:column headerText="Contraseña">
+                    <h:outputText value="#{alumno.upass}"/>
+                </p:column>
+                <p:column headerText="Materia">
+                    <h:outputText value="#{alumno.materia.id}"/>
+                </p:column>
+            </p:dataTable>
+            <p:dataTable var="materia" value="#{alumnosController.catMaterias}">
+                <p:column headerText="ID">
+                    <h:outputText value="#{materia.id}"/>
+                </p:column>
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{materia.name}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </div>
+    <div>
+        <h2>Alta de alumno</h2>
+        <h:link value="Alta de alumno" outcome="/alumnos/agregarAlumnos"></h:link>
+        <br/>
+        <h2>Borrar alumno</h2>
+        <h:link value="Baja de alumno" outcome="/alumnos/borrarAlumno"></h:link>
+        <br/>
+        <h2>Actualizar alumno</h2>
+        <h:link value="Actualizar alumno" outcome="/alumnos/actualizarAlumno"></h:link>
+
+    </div>
+</h:body>
+</html>
